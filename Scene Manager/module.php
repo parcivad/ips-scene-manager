@@ -12,7 +12,7 @@ class SceneManager extends IPSModule {
 
         // interface variable
         $this->RegisterPropertyBoolean("active", true );
-        $this->RegisterPropertyString("scenes", "");
+        $this->RegisterPropertyString("scenes", "[]");
     }
     /*
      * Internal function of SDK
@@ -101,7 +101,9 @@ class SceneManager extends IPSModule {
                             "type" => "ValidationTextBox"
                         ],
                     ],
-                ]
+                ],
+
+                "values" => $this->ReadPropertyString("scenes")
             ]
         ];
     }
