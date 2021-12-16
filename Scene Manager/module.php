@@ -88,7 +88,7 @@ class SceneManager extends IPSModule {
                     [
                         "caption" => "Position",
                         "name" => "position",
-                        "width" => "75px",
+                        "width" => "100px",
                         "add" => 0,
                         "edit" => [
                             "type" => "NumberSpinner",
@@ -109,11 +109,24 @@ class SceneManager extends IPSModule {
                     [
                         "caption" => "Scene objects",
                         "name" => "sceneObjects",
-                        "width" => "0px",
-                        "add" => 0,
+                        "width" => "5px",
+                        "add" => [["InstanceID" => 0]],
                         "visible" => false,
                         "edit" => [
-                            "type" => "List"
+                            "type" => "List",
+                            "add" => true,
+                            "delete" => true,
+                            "columns" => [
+                                [
+                                    "caption"=> "InstanceID",
+                                    "name"=> "InstanceID",
+                                    "width"=> "75px",
+                                    "add"=> 0,
+                                    "edit"=> [
+                                        "type"=> "SelectInstance"
+                                    ]
+                                ]
+                            ]
                         ]
                     ]
                 ]
