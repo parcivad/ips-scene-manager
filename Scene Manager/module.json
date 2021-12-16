@@ -1,0 +1,16 @@
+{
+  "id": "{1C093B1B-AC79-BDF5-F1EA-628265F54388}",
+  "name": "Scene Manager",
+  "type": 3,
+  "vendor": "",
+  "aliases":
+  [
+    "SceneManager",
+    "scenemanager"
+  ],
+  "url": "https://github.com/parcivad",
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "SM"
+}
