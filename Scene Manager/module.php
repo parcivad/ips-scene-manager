@@ -105,6 +105,7 @@ class SceneManager extends IPSModule {
 
                 "values" => [
                     [
+                        "id" => 1,
                         "sceneName" => "test",
                         "reactInstance" => 0
                     ]
