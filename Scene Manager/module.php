@@ -10,6 +10,8 @@ class SceneManager extends IPSModule {
         // Overwrite ips function
         parent::Create();
 
+        // interface variable
+        $this->RegisterPropertyBoolean("active", true );
     }
     /*
      * Internal function of SDK
@@ -17,8 +19,6 @@ class SceneManager extends IPSModule {
     public function ApplyChanges() {
         // Overwrite ips function
         parent::ApplyChanges();
-
-        $this->ReloadForm();
     }
 
     //-----------------------------------------------------< Setting Form.json >------------------------------
@@ -34,6 +34,10 @@ class SceneManager extends IPSModule {
         $this->SendDebug('FORM', json_last_error_msg(), 0);
 
         return $Form;
+    }
+
+    protected function loadScenes() {
+        $values = [];
     }
 
     /**
@@ -79,24 +83,22 @@ class SceneManager extends IPSModule {
 
                 "columns" => [
                     [
-                        "caption" => "React on change",
+                        "caption" => "React to",
                         "name" => "react Instace",
-                        "width" => "120px",
+                        "width" => "140px",
                         "add" => 0,
                         "edit" => [
                             "type" => "SelectVariable"
                         ],
-                        "save" => true,
                     ],
                     [
                         "caption" => "Scene name",
                         "name" => "sceneName",
-                        "width" => "75px",
+                        "width" => "auto",
                         "add" => "",
                         "edit" => [
                             "type" => "ValidationTextBox"
                         ],
-                        "save" => true,
                     ],
                 ]
             ]
