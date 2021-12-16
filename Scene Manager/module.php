@@ -12,7 +12,6 @@ class SceneManager extends IPSModule {
 
         // interface variable
         $this->RegisterPropertyBoolean("active", true );
-        $this->RegisterPropertyString("scenes", "");
     }
     /*
      * Internal function of SDK
@@ -20,6 +19,9 @@ class SceneManager extends IPSModule {
     public function ApplyChanges() {
         // Overwrite ips function
         parent::ApplyChanges();
+
+        $arr = $this->ReadPropertyString("scenes");
+        IPS_LogMessage("SceneManager", $arr );
     }
 
     //-----------------------------------------------------< Setting Form.json >------------------------------
@@ -85,7 +87,7 @@ class SceneManager extends IPSModule {
                 "columns" => [
                     [
                         "caption" => "React to",
-                        "name" => "react Instace",
+                        "name" => "reactInstance",
                         "width" => "140px",
                         "add" => 0,
                         "edit" => [
