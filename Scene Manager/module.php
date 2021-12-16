@@ -12,7 +12,6 @@ class SceneManager extends IPSModule {
 
         // interface variable
         $this->RegisterPropertyBoolean("active", true );
-        $this->RegisterPropertyString("scenes", "[]");
     }
     /*
      * Internal function of SDK
@@ -20,10 +19,6 @@ class SceneManager extends IPSModule {
     public function ApplyChanges() {
         // Overwrite ips function
         parent::ApplyChanges();
-
-        // save list
-        $arr = $this->ReadPropertyString("scenes");
-        IPS_LogMessage("SceneManager", $arr );
     }
 
     //-----------------------------------------------------< Setting Form.json >------------------------------
@@ -48,6 +43,10 @@ class SceneManager extends IPSModule {
         return[
 
         ];
+    }
+
+    public function loadScenes() {
+        // function to present loaded scenes
     }
 
     /**
@@ -77,56 +76,49 @@ class SceneManager extends IPSModule {
             [
                 "type" => "Tree",
                 "name" => "scenes",
-                "caption" => "Controlled scenes of this manager",
+                "caption" => "Scenes of this manager",
                 "add" => true,
                 "delete" => true,
-                "changeOrder" => true,
+                "sort" => [
+                    "column" => "position",
+                    "direction" => "ascending"
+                ],
 
                 "columns" => [
                     [
-                        "caption" => "Scene name",
-                        "name" => "sceneName",
-                        "width" => "auto",
-                        "add" => "",
-                        "edit" => [
-                            "type" => "ValidationTextBox"
-                        ],
-                    ],
-                    [
-                        "caption" => "React to",
-                        "name" => "reactInstance",
-                        "width" => "140px",
+                        "caption" => "Position",
+                        "name" => "position",
+                        "width" => "75px",
                         "add" => 0,
                         "edit" => [
-                            "type" => "SelectVariable"
-                        ],
-                    ]
-                ],
-
-                "values" => [
-                    [
-                        "id" => 1,
-                        "sceneName" => "test",
-                        "reactInstance" => 0
+                            "type" => "NumberSpinner",
+                            "suffix" => " position",
+                            "digits" => 0
+                        ]
                     ],
                     [
-                        "id" => 2,
-                        "parent" => 1,
-                        "sceneName" => "child",
-                        "reactInstance" => 0
+                        "caption" => "Scene name",
+                        "name" => "scene",
+                        "width" => "auto",
+                        "add" => "scene",
+                        "edit" => [
+                            "type" => "ValidationTextBox",
+                            "validate" => " "
+                        ]
                     ],
                     [
-                        "id" => 3,
-                        "sceneName" => "test2",
-                        "reactInstance" => 0
-                    ],
-                    [
-                        "id" => 4,
-                        "parent" => 3,
-                        "sceneName" => "child2",
-                        "reactInstance" => 0
+                        "caption" => "Scene objects",
+                        "name" => "sceneObjects",
+                        "width" => "0px",
+                        "add" => null,
+                        "visible" => false,
+                        "edit" => [
+                            "type" => "List"
+                        ]
                     ]
                 ]
+
+
             ]
         ];
     }
