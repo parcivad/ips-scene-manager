@@ -68,6 +68,7 @@ class SceneManager extends IPSModule {
                         "caption" => "name",
                         "name" => "Scene name",
                         "width" => "75px",
+                        "add" => "",
                         "edit" => [
                             "type" => "ValidationTextBox",
                         ]
