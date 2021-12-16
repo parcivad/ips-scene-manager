@@ -12,7 +12,6 @@ class SceneManager extends IPSModule {
 
         // interface variable
         $this->RegisterPropertyBoolean("active", true );
-        $this->RegisterPropertyString("scenes", "[]");
     }
     /*
      * Internal function of SDK
@@ -82,28 +81,49 @@ class SceneManager extends IPSModule {
                 "changeOrder" => true,
                 "noValuesFromConfiguration" => false,
 
-                "columns" => [
-                    [
-                        "caption" => "React to",
-                        "name" => "reactInstance",
-                        "width" => "140px",
-                        "add" => 0,
-                        "edit" => [
-                            "type" => "SelectVariable"
-                        ],
-                    ],
-                    [
-                        "caption" => "Scene name",
-                        "name" => "sceneName",
-                        "width" => "auto",
-                        "add" => "",
-                        "edit" => [
-                            "type" => "ValidationTextBox"
-                        ],
-                    ],
-                ],
-
-                "values" => $this->ReadPropertyString("scenes")
+                "columns"=> [[
+                    "caption"=> "InstanceID",
+                    "name"=> "InstanceID",
+                    "width"=> "75px",
+                    "add"=> 0,
+                    "edit"=> [
+                        "type"=> "SelectInstance"
+                    ]
+                ], [
+                    "caption"=> "Name",
+                    "name"=> "Name",
+                    "width"=> "auto",
+                    "add"=> ""
+                ], [
+                    "caption"=> "State",
+                    "name"=> "State",
+                    "width"=> "40px",
+                    "add"=> "New!"
+                ], [
+                    "caption"=> "Temperature",
+                    "name"=> "Temperature",
+                    "width"=> "75px",
+                    "add"=> 20.0,
+                    "edit"=> [
+                        "type"=> "NumberSpinner",
+                        "digits"=> 2
+                    ]
+                ]],
+                "values"=> [[
+                    "id"=> 1,
+                    "InstanceID"=> 0,
+                    "Name"=> "Kategorie",
+                    "State"=> "",
+                    "Temperature"=> 0
+                ],[
+                    "id"=> 2,
+                    "parent"=> 1,
+                    "InstanceID"=> 12435,
+                    "Name"=> "ABCD",
+                    "State"=> "OK!",
+                    "Temperature"=> 23.31,
+                    "rowColor"=> "#ff0000"
+                ]]
             ]
         ];
     }
