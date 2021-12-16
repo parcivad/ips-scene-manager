@@ -110,15 +110,13 @@ class SceneManager extends IPSModule {
                         "caption" => "Scene objects",
                         "name" => "sceneObjects",
                         "width" => "0px",
-                        "add" => null,
+                        "add" => 0,
                         "visible" => false,
                         "edit" => [
                             "type" => "List"
                         ]
                     ]
                 ]
-
-
             ]
         ];
     }
