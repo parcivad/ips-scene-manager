@@ -78,13 +78,14 @@ class SceneManager extends IPSModule {
                 "changeOrder" => true,
 
                 "columns" => [
+                    "save" => true,
                     [
                         "caption" => "React on change",
                         "name" => "react Instace",
-                        "width" => "75px",
+                        "width" => "120px",
                         "add" => 0,
                         "edit" => [
-                            "type" => "SelectCondition"
+                            "type" => "SelectVariable"
                         ]
                     ],
                     [
