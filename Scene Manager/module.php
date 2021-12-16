@@ -12,6 +12,7 @@ class SceneManager extends IPSModule {
 
         // interface variable
         $this->RegisterPropertyBoolean("active", true );
+        $this->RegisterPropertyString("scenes", "");
     }
     /*
      * Internal function of SDK
@@ -75,7 +76,7 @@ class SceneManager extends IPSModule {
             ],
             [
                 "type" => "Tree",
-                "name" => "Controller",
+                "name" => "scenes",
                 "caption" => "Controlled scenes of this manager",
                 "add" => true,
                 "delete" => true,
