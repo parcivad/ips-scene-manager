@@ -89,27 +89,22 @@ class SceneManager extends IPSModule {
 
                 "columns" => [
                     [
-                        "type" => "RowLayout",
-                        "items" => [
-                            [
-                                "caption" => "Position",
-                                "name" => "position",
-                                "width" => "100px",
-                                "add" => 0,
-                                "edit" => [
-                                    "type" => "NumberSpinner",
-                                    "digits" => 0
-                                ]
-                            ],
-                            [
-                                "caption" => "Scene name",
-                                "name" => "scene",
-                                "width" => "auto",
-                                "add" => "scene",
-                                "edit" => [
-                                    "type" => "ValidationTextBox",
-                                ]
-                            ]
+                        "caption" => "Position",
+                        "name" => "position",
+                        "width" => "100px",
+                        "add" => 0,
+                        "edit" => [
+                            "type" => "NumberSpinner",
+                            "digits" => 0
+                        ]
+                    ],
+                    [
+                        "caption" => "Scene name",
+                        "name" => "scene",
+                        "width" => "auto",
+                        "add" => "scene",
+                        "edit" => [
+                            "type" => "ValidationTextBox",
                         ]
                     ],
                     [
