@@ -19,6 +19,9 @@ class SceneManager extends IPSModule {
     public function ApplyChanges() {
         // Overwrite ips function
         parent::ApplyChanges();
+
+        $arr = $this->ReadPropertyString("scenes");
+        IPS_LogMessage("SceneManager", $arr);
     }
 
     //-----------------------------------------------------< Setting Form.json >------------------------------
@@ -92,7 +95,6 @@ class SceneManager extends IPSModule {
                         "add" => 0,
                         "edit" => [
                             "type" => "NumberSpinner",
-                            "suffix" => " position",
                             "digits" => 0
                         ]
                     ],
@@ -103,14 +105,14 @@ class SceneManager extends IPSModule {
                         "add" => "scene",
                         "edit" => [
                             "type" => "ValidationTextBox",
-                            "validate" => " "
+                            "validate" => !null
                         ]
                     ],
                     [
                         "caption" => "Scene objects",
                         "name" => "sceneObjects",
                         "width" => "5px",
-                        "add" => [["InstanceID" => 0]],
+                        "add" => [],
                         "visible" => false,
                         "edit" => [
                             "type" => "List",
@@ -118,12 +120,21 @@ class SceneManager extends IPSModule {
                             "delete" => true,
                             "columns" => [
                                 [
-                                    "caption"=> "InstanceID",
-                                    "name"=> "InstanceID",
-                                    "width"=> "75px",
+                                    "caption" => "VariableID",
+                                    "name"=> "VariableID",
+                                    "width"=> "auto",
                                     "add"=> 0,
                                     "edit"=> [
-                                        "type"=> "SelectInstance"
+                                        "type" => "SelectVariable",
+                                    ]
+                                ],
+                                [
+                                    "caption" => "Set",
+                                    "name" => "VariableSet",
+                                    "width" => "120px",
+                                    "add" => false,
+                                    "edit" => [
+                                        "type" => "CheckBox"
                                     ]
                                 ]
                             ]
