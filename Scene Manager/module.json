@@ -3,6 +3,10 @@
   "name": "Scene Manager",
   "type": 3,
   "vendor": "",
+  "aliases":
+  [
+    "SceneManager"
+  ],
   "url": "https://github.com/parcivad",
   "parentRequirements": [],
   "childRequirements": [],
