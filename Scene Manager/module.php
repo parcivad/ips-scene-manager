@@ -78,7 +78,6 @@ class SceneManager extends IPSModule {
                 "changeOrder" => true,
 
                 "columns" => [
-                    "save" => true,
                     [
                         "caption" => "React on change",
                         "name" => "react Instace",
@@ -86,7 +85,8 @@ class SceneManager extends IPSModule {
                         "add" => 0,
                         "edit" => [
                             "type" => "SelectVariable"
-                        ]
+                        ],
+                        "save" => true,
                     ],
                     [
                         "caption" => "Scene name",
@@ -95,7 +95,8 @@ class SceneManager extends IPSModule {
                         "add" => "",
                         "edit" => [
                             "type" => "ValidationTextBox"
-                        ]
+                        ],
+                        "save" => true,
                     ],
                 ]
             ]
