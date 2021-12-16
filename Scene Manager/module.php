@@ -84,15 +84,6 @@ class SceneManager extends IPSModule {
 
                 "columns" => [
                     [
-                        "caption" => "React to",
-                        "name" => "reactInstance",
-                        "width" => "140px",
-                        "add" => 0,
-                        "edit" => [
-                            "type" => "SelectVariable"
-                        ],
-                    ],
-                    [
                         "caption" => "Scene name",
                         "name" => "sceneName",
                         "width" => "auto",
@@ -101,9 +92,23 @@ class SceneManager extends IPSModule {
                             "type" => "ValidationTextBox"
                         ],
                     ],
+                    [
+                        "caption" => "React to",
+                        "name" => "reactInstance",
+                        "width" => "140px",
+                        "add" => 0,
+                        "edit" => [
+                            "type" => "SelectVariable"
+                        ],
+                    ]
                 ],
 
-                "values" => $this->ReadPropertyString("scenes")
+                "values" => [
+                    [
+                        "sceneName" => "test",
+                        "reactInstance" => 0
+                    ]
+                ]
             ]
         ];
     }
