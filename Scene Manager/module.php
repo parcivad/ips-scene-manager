@@ -68,7 +68,7 @@ class SceneManager extends IPSModule {
                         "caption" => "TEXT"
                     ]
                 ]
-            ]
+            ],
             [
                 "type" => "Tree",
                 "name" => "Controller",
