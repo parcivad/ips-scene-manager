@@ -61,9 +61,17 @@ class SceneManager extends IPSModule {
                 "caption" => "Controlled scenes of this manager",
                 "add" => true,
                 "delete" => true,
-                "sort" => [
-                    "column" => "Name",
-                    "direction" => "ascending"
+                "changeOrder" => true,
+
+                "columns" => [
+                    [
+                        "caption" => "name",
+                        "name" => "Scene name",
+                        "width" => "75px",
+                        "edit" => [
+                            "type" => "ValidationTextBox",
+                        ]
+                    ],
                 ]
             ]
         ];
