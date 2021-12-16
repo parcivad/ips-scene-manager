@@ -39,10 +39,6 @@ class SceneManager extends IPSModule {
         return $Form;
     }
 
-    protected function loadScenes() {
-        $values = [];
-    }
-
     /**
      * @return array[] Form Actions
      */
@@ -83,6 +79,7 @@ class SceneManager extends IPSModule {
                 "add" => true,
                 "delete" => true,
                 "changeOrder" => true,
+                "noValuesFromConfiguration" => false,
 
                 "columns" => [
                     [
